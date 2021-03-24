@@ -8,7 +8,7 @@ const io = socket(server);
 const options = {
   /* ... */
 };
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,4 +27,4 @@ io.on("connection", (socket) => {
   console.log("made connection");
 });
 
-server.listen(PORT, () => console.log("server is running on port 8000"));
+server.listen(PORT, () => console.log(`Server started on ${PORT} on http://localhost:${PORT}`));
